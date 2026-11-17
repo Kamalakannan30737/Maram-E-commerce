@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@layer theme, base, mui, components, utilities;
+
+
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+@theme {
+  --font-sans: "Cormorant Garamonf", Georgia, serif;
+  --font-serif: "Montserrat", Arial, sans-serif;
+  --color-brand: #1f3d2b;
+  --color-cream: #faf7f4;
+  --color-ink: #222222;
+
+  --animate-zoom: zoom 14s ease-in-out infinite alternate;
+  --animate-slide-right: slide-right 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  @keyframes slide-right {
+    from { opacity: 0; transform: translateX(-3rem); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: clip;
+}
+body { @apply bg-cream font-sans text-ink antialiased; }
